@@ -75,7 +75,7 @@ tail -f /var/lib/sadWatcher/sadWatcher.log   # log file
 ## Uninstall
 
 ```bash
-bash install.sh uninstall
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/horamsafaryani/sadWatcher/latest/install.sh)" -- uninstall
 ```
 
 ---
@@ -85,17 +85,6 @@ bash install.sh uninstall
 - Linux with `ss` (iproute2) — any modern distro
 - Root access (needed for `ss -K`)
 - Rebecca, Marzban or PasarGuard panel with SQLite database
-
----
-
-## Build from source
-
-```bash
-git clone https://github.com/horamsafaryani/sadWatcher
-cd sadWatcher
-bash build.sh
-# output: dist/sadWatcher
-```
 
 ---
 
