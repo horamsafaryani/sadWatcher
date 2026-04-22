@@ -1,12 +1,12 @@
 # sadWatcher
 
-**sadWatcher** یه دیمون سبک‌وزنه که ترافیک یوزرهای پنل [Rebecca](https://github.com/rebeccapanel/Rebecca) یا [Marzban](https://github.com/Gozargah/Marzban) یا [PasarGuard](https://github.com/PasarGuard/panel) رو لحظه‌به‌لحظه چک می‌کنه. فوری کانکشن‌های فعالش رو قطع می‌کنه — با `ss -K` که مستقیم TCP RST می‌فرسته به کانکشن‌های established.
+**سدواچر** یه اسکریپت سبکه که ترافیک یوزرهای پنل [Rebecca](https://github.com/rebeccapanel/Rebecca) یا [Marzban](https://github.com/Gozargah/Marzban) یا [PasarGuard](https://github.com/PasarGuard/panel) رو لحظه‌به‌لحظه چک می‌کنه. و فوری کانکشن‌های فعال کاربران محدود شده رو قطع می‌کنه.
 
 ---
 
 ## چرا sadWatcher؟
 
-Rebecca/Marzban یوزرهای پر‌حجم رو توی دیتابیس disabled می‌کنه، ولی کانکشن‌های فعال تا ری‌استارت بعدی xray قطع نمی‌شن. sadWatcher این کانکشن‌ها رو ظرف چند ثانیه می‌بنده، بدون اینکه نیازی به ری‌استارت کل پنل باشه.
+پنل ها خودشون یوزرهای پر‌حجم رو توی دیتابیس disabled می‌کنن، ولی کانکشن‌های فعال تا ری‌استارت بعدی xray قطع نمی‌شن. سدواچر این کانکشن‌ها رو ظرف چند ثانیه می‌بنده، بدون اینکه نیازی به ری‌استارت کل پنل باشه.
 
 پشتیبانی می‌کند از:
 - Rebecca
@@ -24,7 +24,7 @@ Rebecca/Marzban یوزرهای پر‌حجم رو توی دیتابیس disabled
 
 1. هر N ثانیه دیتابیس SQLite رو می‌خونه
 2. یوزرهایی که `used_traffic > data_limit` دارن رو پیدا می‌کنه
-3. با `ss -K` روی پورت‌های xray TCP RST می‌فرسته و کانکشن‌ها رو می‌کشه
+3. با ss پورت هایی که کانفیگ فعال دارین رو کیل میکنه
 4. همه چیز رو لاگ می‌کنه
 
 ---
@@ -72,7 +72,7 @@ tail -f /var/lib/sadWatcher/sadWatcher.log       # فایل لاگ
 
 ---
 
-## حذف
+## حذف نصب کامل
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/horamsafaryani/sadWatcher/latest/install.sh)" -- uninstall
@@ -86,16 +86,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/horamsafaryani/sadWatche
 - دسترسی root (برای `ss -K` لازمه)
 - پنل Rebecca یا Marzban یا PasarGuard با دیتابیس SQLite
 
----
-
-## بیلد از سورس
-
-```bash
-git clone https://github.com/horamsafaryani/sadWatcher
-cd sadWatcher
-bash build.sh
-# خروجی: dist/sadWatcher
-```
 
 ---
 
