@@ -1,4 +1,16 @@
-# sadWatcher
+<h1 align="center"/>sadWatcher</h1>
+
+<p align="center">
+ <a href="./README.md">
+ English
+ </a>
+ /
+ <a href="./README-fa.md">
+ فارسی
+ </a>
+</p>
+
+---
 
 **sadWatcher** is a lightweight daemon that monitors [Rebecca](https://github.com/rebeccapanel/Rebecca) / [Marzban](https://github.com/Gozargah/Marzban) / [PasarGuard](https://github.com/PasarGuard/panel) user traffic in real time and immediately kills active xray connections when a user exceeds their data limit — using `ss -K` to send TCP RST packets directly to established connections.
 
