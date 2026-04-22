@@ -1,4 +1,16 @@
-# sadWatcher
+<h1 align="center"/>sadWatcher</h1>
+
+<p align="center">
+ <a href="./README.md">
+ English
+ </a>
+ /
+ <a href="./README-fa.md">
+ فارسی
+ </a>
+</p>
+
+---
 
 **سدواچر** یه اسکریپت سبکه که ترافیک یوزرهای پنل [Rebecca](https://github.com/rebeccapanel/Rebecca) یا [Marzban](https://github.com/Gozargah/Marzban) یا [PasarGuard](https://github.com/PasarGuard/panel) رو لحظه‌به‌لحظه چک می‌کنه. و فوری کانکشن‌های فعال کاربران محدود شده رو قطع می‌کنه.
 
