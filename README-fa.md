@@ -75,7 +75,7 @@ tail -f /var/lib/sadWatcher/sadWatcher.log       # فایل لاگ
 ## حذف
 
 ```bash
-bash install.sh uninstall
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/horamsafaryani/sadWatcher/latest/install.sh)" -- uninstall
 ```
 
 ---
